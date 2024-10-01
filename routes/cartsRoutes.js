@@ -4,18 +4,18 @@ import fs from 'fs';
 const router = Router();
 const path = './data/carrito.json';
 
-// Helper para leer carritos desde el archivo
+// para leer carritos desde el archivo
 const readCarts = () => {
   const data = fs.readFileSync(path, 'utf-8');
   return JSON.parse(data);
 };
 
-// Helper para escribir carritos al archivo
+// Hpara escribir carritos al archivo
 const writeCarts = (carts) => {
   fs.writeFileSync(path, JSON.stringify(carts, null, 2), 'utf-8');
 };
 
-// Ruta POST / - Crear un nuevo carrito
+// Ruta POST / - para crear un nuevo carrito
 router.post('/', (req, res) => {
   const carts = readCarts();
   const newCart = {
@@ -28,7 +28,7 @@ router.post('/', (req, res) => {
   res.status(201).json(newCart);
 });
 
-// Ruta GET /:cid - Obtener productos de un carrito por ID
+// Ruta GET /:cid - para obtener productos de un carrito por ID
 router.get('/:cid', (req, res) => {
   const carts = readCarts();
   const cart = carts.find(c => c.id === req.params.cid);
@@ -40,7 +40,7 @@ router.get('/:cid', (req, res) => {
   res.json(cart.products);
 });
 
-// Ruta POST /:cid/product/:pid - Agregar producto al carrito
+// Ruta POST /:cid/product/:pid - para agregar producto al carrito
 router.post('/:cid/product/:pid', (req, res) => {
   const carts = readCarts();
   const cartIndex = carts.findIndex(c => c.id === req.params.cid);
