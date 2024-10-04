@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import fs from 'fs';
+import { uploader } from '../uploader.js';
 
 const router = Router();
 const path = './data/productos.json';
@@ -33,7 +34,7 @@ router.get('/:pid', (req, res) => {
 });
 
 // Ruta POST / para agregar un nuevo producto
-router.post('/', (req, res) => {
+router.post('/',uploader.single('thumbnail'), (req, res) => {
   const products = readProducts();
   const newProduct = {
     id: (products.length + 1).toString(),

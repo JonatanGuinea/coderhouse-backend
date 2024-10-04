@@ -24,5 +24,31 @@
       "https://example.com/image1.jpg"
     ],
     "status": true
+  },
+  {
+    "id": "3",
+    "title": "Producto b",
+    "description": "Descripción del producto A",
+    "code": "A123",
+    "price": 100,
+    "stock": 50,
+    "category": "Categoría A",
+    "thumbnails": [
+      "https://example.com/image1.jpg"
+    ],
+    "status": true
+  },
+  {
+    "id": "4",
+    "title": "Producto b",
+    "description": "Descripción del producto A",
+    "code": "A123",
+    "price": 100,
+    "stock": 50,
+    "category": "Categoría A",
+    "thumbnails": [
+      "https://example.com/image1.jpg"
+    ],
+    "status": true
   }
 ]
